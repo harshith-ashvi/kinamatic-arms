@@ -1,7 +1,7 @@
 "use client";
 
-import { drawPath, KinematicArm } from "@/lib/kinamatic-arm";
 import { useEffect, useRef } from "react";
+import { drawPath, KinematicArm } from "@/lib/kinamatic-arm";
 
 const KinematicCanvas = () => {
   const canvasRef = useRef<null | HTMLCanvasElement>(null);
@@ -20,13 +20,13 @@ const KinematicCanvas = () => {
       const width = canvas.width;
       const height = canvas.height;
 
-      const arm = new KinematicArm(width / 2, height / 2, 200, 0);
-      const arm2 = new KinematicArm(arm.getEndX(), arm.getEndY(), 200, 1.3);
-      const arm3 = new KinematicArm(arm2.getEndX(), arm2.getEndY(), 200, 1.3);
+      const arm1 = new KinematicArm(width / 2, height / 2, 120, 0);
+      const arm2 = new KinematicArm(arm1.getEndX(), arm1.getEndY(), 90, 0);
+      const arm3 = new KinematicArm(arm2.getEndX(), arm2.getEndY(), 70, 0);
 
       let angle = 0;
 
-      arm2.parent = arm;
+      arm2.parent = arm1;
       arm3.parent = arm2;
 
       updateArm();
@@ -34,15 +34,15 @@ const KinematicCanvas = () => {
       function updateArm() {
         if (!context) return;
         context.clearRect(0, 0, width, height);
-        arm.angle = Math.sin(angle) * 1.2;
-        arm2.angle = arm.angle * 4;
-        arm3.angle = arm2.angle * 4;
+        arm1.angle = Math.sin(angle * 1.0) * 1.1;
+        arm2.angle = Math.cos(angle * 1.333) * 0.95;
+        arm3.angle = Math.sin(angle * 1.997) * 0.82;
 
-        arm2.x = arm.getEndX();
-        arm2.y = arm.getEndY();
+        arm2.x = arm1.getEndX();
+        arm2.y = arm1.getEndY();
         arm3.y = arm2.getEndY();
         arm3.x = arm2.getEndX();
-        angle += 0.001;
+        angle += 0.04;
 
         const endX = arm3.getEndX();
         const endY = arm3.getEndY();
@@ -51,7 +51,7 @@ const KinematicCanvas = () => {
 
         drawPath(context, path);
 
-        arm.renderArm(context as CanvasRenderingContext2D);
+        arm1.renderArm(context as CanvasRenderingContext2D);
         arm2.renderArm(context as CanvasRenderingContext2D);
         arm3.renderArm(context as CanvasRenderingContext2D);
 
