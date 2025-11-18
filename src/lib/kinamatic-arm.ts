@@ -23,24 +23,22 @@ export class KinematicArm {
     this.angle = angle;
   }
 
-  getEndX() {
+  getAbsoluteAngle(): number {
     let angle = this.angle;
     let parent = this.parent;
     while (parent) {
       angle += parent.angle;
       parent = parent.parent;
     }
-    return this.x + Math.cos(angle) * this.length;
+    return angle;
+  }
+
+  getEndX() {
+    return this.x + Math.cos(this.getAbsoluteAngle()) * this.length;
   }
 
   getEndY() {
-    let angle = this.angle;
-    let parent = this.parent;
-    while (parent) {
-      angle += parent.angle;
-      parent = parent.parent;
-    }
-    return this.y + Math.sin(angle) * this.length;
+    return this.y + Math.sin(this.getAbsoluteAngle()) * this.length;
   }
 
   renderArm(context: CanvasRenderingContext2D) {
