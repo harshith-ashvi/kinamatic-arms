@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 import Navbar from "@/components/navbar";
-import KinematicCanvas from "@/components/kinamatic-canvas";
-import KinematicControl from "@/components/kinamatic-control";
+import KinematicAnimationLayout from "@/components/kinematic-animation-layout";
+
 import { cn } from "@/lib/utils";
 
 export default function Home() {
@@ -16,10 +16,7 @@ export default function Home() {
     >
       <div className="max-w-7xl w-full mx-auto z-10 p-4">
         <Navbar />
-        <div className="flex items-start w-full gap-4 mt-4 h-[calc(100vh-130px)]">
-          <KinematicCanvas />
-          <KinematicControl />
-        </div>
+        <KinematicAnimationLayout />
         <p className="font-bold text-md text-neutral-800 dark:text-neutral-300 text-center mt-2">
           Built by{" "}
           <Link
