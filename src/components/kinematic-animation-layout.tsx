@@ -10,7 +10,7 @@ const KinematicAnimationLayout = () => {
   const [generalValues, setGeneralValues] = useState<GeneralValueInterface>({
     initialAngle: 0,
     incrementAngle: 0,
-    bgColor: "#000000",
+    bgColor: "#ffffff",
     pathColor: "#ff0000",
   });
   const [armsValue, setArmsValue] = useState<ArmValueInterface[]>([]);

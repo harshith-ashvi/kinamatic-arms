@@ -54,11 +54,12 @@ export class KinematicArm {
 
 export function drawPath(
   ctx: CanvasRenderingContext2D,
-  path: { x: number; y: number }[]
+  path: { x: number; y: number }[],
+  pathColor: string
 ) {
   if (path.length < 2) return;
 
-  ctx.strokeStyle = "red";
+  ctx.strokeStyle = pathColor || "red";
   ctx.lineWidth = 3;
 
   ctx.beginPath();
