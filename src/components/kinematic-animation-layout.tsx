@@ -24,7 +24,7 @@ const KinematicAnimationLayout = () => {
 
   return (
     <div className="flex items-start w-full gap-4 mt-4 h-[calc(100vh-130px)]">
-      <KinematicCanvas />
+      <KinematicCanvas generalValues={generalValues} armsValue={armsValue} />
       <KinematicControl
         generalValues={generalValues}
         armsValue={armsValue}
