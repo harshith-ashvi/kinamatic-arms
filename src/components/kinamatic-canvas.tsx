@@ -70,8 +70,11 @@ const KinematicCanvas = ({
 
         drawPath(context, path, generalValues.pathColor);
 
-        arms.forEach((arm) => {
-          arm.renderArm(context as CanvasRenderingContext2D);
+        arms.forEach((arm, index) => {
+          arm.renderArm(
+            context as CanvasRenderingContext2D,
+            armsValue[index].armColor
+          );
         });
 
         requestAnimationFrame(updateArm);

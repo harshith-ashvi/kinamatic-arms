@@ -103,6 +103,20 @@ const ArmGroup = ({
           )
         }
       />
+
+      <InputGroup
+        label="Arm Color"
+        name={`armColor${index}`}
+        type="color"
+        value={arm.armColor}
+        onChange={(e) =>
+          onChangeArmsValue(
+            "armColor",
+            (e.target as HTMLInputElement).value,
+            index
+          )
+        }
+      />
     </div>
   );
 };
@@ -128,7 +142,12 @@ const KinematicControl = ({
   };
 
   const onAddArm = () => {
-    const newArm = { length: 80, initialAngle: 0, incrementAngle: 8 };
+    const newArm = {
+      length: 80,
+      initialAngle: 0,
+      incrementAngle: 8,
+      armColor: "#000000",
+    };
     handleArmsValueUpdate([...armsValue, newArm]);
   };
 

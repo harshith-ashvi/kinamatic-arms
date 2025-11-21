@@ -41,9 +41,9 @@ export class KinematicArm {
     return this.y + Math.sin(this.getAbsoluteAngle()) * this.length;
   }
 
-  renderArm(context: CanvasRenderingContext2D) {
+  renderArm(context: CanvasRenderingContext2D, armColor: string) {
     context.lineWidth = 5;
-    context.strokeStyle = "#000";
+    context.strokeStyle = armColor || "#000";
 
     context.beginPath();
     context.moveTo(this.x, this.y);
