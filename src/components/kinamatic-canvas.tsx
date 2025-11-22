@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+
 import { drawPath, KinematicArm } from "@/lib/kinamatic-arm";
 import { ArmValueInterface, GeneralValueInterface } from "@/lib/types";
 
@@ -68,7 +69,12 @@ const KinematicCanvas = ({
         path.push({ x: endX, y: endY });
         if (path.length > 10000) path.shift();
 
-        drawPath(context, path, generalValues.pathColor);
+        drawPath(
+          context,
+          path,
+          generalValues.pathColor,
+          generalValues.pathThickness
+        );
 
         arms.forEach((arm, index) => {
           arm.renderArm(

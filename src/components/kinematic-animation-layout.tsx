@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+
 import KinematicCanvas from "./kinamatic-canvas";
 import KinematicControl from "./kinamatic-control";
 
@@ -12,6 +13,7 @@ const KinematicAnimationLayout = () => {
     incrementAngle: 0,
     bgColor: "#ffffff",
     pathColor: "#ff0000",
+    pathThickness: 3,
   });
   const [armsValue, setArmsValue] = useState<ArmValueInterface[]>([]);
 

@@ -3,6 +3,7 @@ export interface GeneralValueInterface {
   incrementAngle: number;
   bgColor: string;
   pathColor: string;
+  pathThickness: number;
 }
 
 export interface ArmValueInterface {
