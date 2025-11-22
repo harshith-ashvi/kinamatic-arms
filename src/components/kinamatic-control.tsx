@@ -1,9 +1,10 @@
+import { SyntheticEvent } from "react";
+import { Trash } from "lucide-react";
+
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { ArmValueInterface, GeneralValueInterface } from "@/lib/types";
-import { SyntheticEvent } from "react";
-import { Button } from "./ui/button";
-import { Trash } from "lucide-react";
 
 interface KinematicControlProps {
   generalValues: GeneralValueInterface;
@@ -205,6 +206,18 @@ const KinematicControl = ({
             handleGeneralValueUpdate(
               "pathColor",
               (e.target as HTMLInputElement).value
+            )
+          }
+        />
+        <InputGroup
+          label="Path Stroke Width"
+          name="pathThickness"
+          type="number"
+          value={generalValues.pathThickness}
+          onChange={(e) =>
+            handleGeneralValueUpdate(
+              "pathThickness",
+              Number((e.target as HTMLInputElement).value)
             )
           }
         />
