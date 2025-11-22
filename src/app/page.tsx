@@ -10,8 +10,8 @@ export default function Home() {
     <div
       className={cn(
         "h-screen",
-        "bg-[radial-gradient(var(--color-neutral-500)_1px,transparent_1px)] bg-size-[20px_20px]",
-        "dark:bg-[radial-gradient(var(--color-neutral-600)_1px,transparent_1px)]"
+        "bg-[radial-gradient(var(--color-neutral-500)_1px,transparent_1px)] bg-size-[20px_20px] bg-neutral-50",
+        "dark:bg-[radial-gradient(var(--color-neutral-600)_1px,transparent_1px)] dark:bg-neutral-800"
       )}
     >
       <div className="max-w-7xl w-full mx-auto z-10 p-4">
