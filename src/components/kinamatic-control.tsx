@@ -41,8 +41,16 @@ const InputGroup = ({
 }: InputGroupProps) => {
   return (
     <div className="flex flex-col gap-1 mt-2">
-      <Label htmlFor={name}>{label}</Label>
-      <Input name={name} type={type} value={value} onChange={onChange} />
+      <Label htmlFor={name} className="text-neutral-800 dark:text-neutral-200">
+        {label}
+      </Label>
+      <Input
+        name={name}
+        type={type}
+        value={value}
+        onChange={onChange}
+        className={`${type === "color" ? "p-0 border-0" : ""}`}
+      />
     </div>
   );
 };
@@ -54,11 +62,13 @@ const ArmGroup = ({
   onChangeArmsValue,
 }: ArmGroupProps) => {
   return (
-    <div className="p-2 py-4 border border-neutral-400 rounded-lg">
+    <div className="p-2 py-4 border border-neutral-400 rounded-lg bg-neutral-100 dark:bg-neutral-800 shadow-md">
       <div className="flex items-center justify-between">
-        <p className="font-bold text-lg">Arm {index + 1}</p>
+        <p className="font-bold text-lg text-neutral-800 dark:text-neutral-100">
+          Arm {index + 1}
+        </p>
         <Trash
-          className="size-4 cursor-pointer"
+          className="size-4 cursor-pointer text-neutral-800 dark:text-neutral-100"
           onClick={() => onDeleteArm(index)}
         />
       </div>
@@ -160,7 +170,9 @@ const KinematicControl = ({
   return (
     <div className="h-full flex-2 w-full bg-neutral-50 dark:bg-neutral-800 rounded-lg p-2 overflow-y-auto">
       <div className="p-2 py-4 border border-neutral-400 rounded-lg">
-        <p className="font-bold text-lg">General Control</p>
+        <p className="font-bold text-lg dark:text-neutral-100">
+          General Control
+        </p>
         <InputGroup
           label="Initial Angle"
           name="initialAngle"
@@ -235,7 +247,10 @@ const KinematicControl = ({
         ))}
       </div>
 
-      <Button className="w-full m-2 p-2 mx-auto" onClick={onAddArm}>
+      <Button
+        className="w-full m-2 p-2 mx-auto cursor-pointer dark:bg-neutral-200 dark:text-neutral-800"
+        onClick={onAddArm}
+      >
         Add Arm
       </Button>
     </div>

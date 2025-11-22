@@ -5,7 +5,9 @@ import ModeToggle from "./mode-toggle";
 const Navbar = () => {
   return (
     <div className="flex items-center justify-between p-2 border-gray-200 border rounded-lg px-4 bg-white dark:bg-neutral-800 dark:border-neutral-600 z-10">
-      <h1 className="font-bold text-2xl">KinamaticArm</h1>
+      <h1 className="font-bold text-2xl text-neutral-800 dark:text-neutral-100">
+        KinamaticArm
+      </h1>
       <div className="flex items-center gap-4">
         <ModeToggle />
         <Link
