@@ -168,7 +168,7 @@ const KinematicControl = ({
   };
 
   return (
-    <div className="h-full flex-2 w-full bg-neutral-50 dark:bg-neutral-800 rounded-lg p-2 overflow-y-auto">
+    <div className="h-full flex-2 w-full bg-neutral-50 dark:bg-neutral-800 rounded-lg p-2 overflow-y-auto border dark:border-neutral-600">
       <div className="p-2 py-4 border border-neutral-400 rounded-lg">
         <p className="font-bold text-lg dark:text-neutral-100">
           General Control
