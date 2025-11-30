@@ -248,7 +248,7 @@ const KinematicControl = ({
       </div>
 
       <Button
-        className="w-full m-2 p-2 mx-auto cursor-pointer dark:bg-neutral-200 dark:text-neutral-800"
+        className="w-full m-2 p-2 mx-auto cursor-pointer dark:bg-neutral-200 dark:text-neutral-800 dark:hover:bg-neutral-300"
         onClick={onAddArm}
       >
         Add Arm
