@@ -6,7 +6,8 @@ An interactive kinematic arm visualization and simulation tool. Create chains of
 
 Kinematic Arms is a lightweight web app built with Next.js + TypeScript. It uses HTML5 Canvas to animate forward kinematics chains, letting you experiment with arm lengths, rotation speeds, and colors to generate complex geometric patterns.
 
-![Kinematic Arms Preview](public/preview.png)
+<img width="3600" height="2025" alt="kinematic-arms" src="https://github.com/user-attachments/assets/76c99814-68db-4526-91a3-515ebbede543" />
+
 
 ## Table of Contents
 
